@@ -31,3 +31,21 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 
 Code
 ============================
+
+class Solution {
+
+    /**
+     * @param Integer[] $nums1
+     * @param Integer $m
+     * @param Integer[] $nums2
+     * @param Integer $n
+     * @return NULL
+     */
+    function merge(&$nums1, $m, $nums2, $n) {
+        $lenght = $m+$n;
+        for($i=0; $i < $lenght ; $i++){
+            $nums1[$lenght-($n-$i)]=$nums2[$i];
+            echo $lenght-($n+$i)."/".$lenght.",";
+        }
+    }
+}
