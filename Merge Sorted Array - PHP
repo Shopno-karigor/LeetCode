@@ -43,9 +43,9 @@ class Solution {
      */
     function merge(&$nums1, $m, $nums2, $n) {
         $lenght = $m+$n;
-        for($i=0; $i < $lenght ; $i++){
+        for($i=0; $i < $n ; $i++){
             $nums1[$lenght-($n-$i)]=$nums2[$i];
-            echo $lenght-($n+$i)."/".$lenght.",";
+            //echo $lenght-($n-$i)."/".$nums1[$lenght-($n-$i)].",";
         }
     }
 }
