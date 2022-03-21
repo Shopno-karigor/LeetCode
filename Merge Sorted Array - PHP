@@ -29,6 +29,8 @@ Explanation: The arrays we are merging are [] and [1].
 The result of the merge is [1].
 Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
 
+complexity less then O(m + n)
+
 Code
 ============================
 
@@ -45,7 +47,6 @@ class Solution {
         $lenght = $m+$n;
         for($i=0; $i < $n ; $i++){
             $nums1[$lenght-($n-$i)]=$nums2[$i];
-            //echo $lenght-($n-$i)."/".$nums1[$lenght-($n-$i)].",";
         }
         return sort($nums1);
     }
