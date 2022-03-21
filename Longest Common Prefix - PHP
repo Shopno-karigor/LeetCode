@@ -13,3 +13,21 @@ Example 2:
 Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings.
+
+Code
+======================
+class Solution {
+
+    /**
+     * @param String[] $strs
+     * @return String
+     */
+    function longestCommonPrefix($strs) {
+        for($i=0; $i < sizeof($strs); $i++){
+            echo strlen($strs[$i]).",";
+            //echo $strs[$i];
+        }
+        
+        return $prefix;
+    }
+}
