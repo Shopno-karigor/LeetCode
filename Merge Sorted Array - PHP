@@ -47,5 +47,6 @@ class Solution {
             $nums1[$lenght-($n-$i)]=$nums2[$i];
             //echo $lenght-($n-$i)."/".$nums1[$lenght-($n-$i)].",";
         }
+        return sort($nums1);
     }
 }
