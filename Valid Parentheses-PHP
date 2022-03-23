@@ -23,6 +23,7 @@ Output: false
 Code
 =================
 class Solution {
+
     /**
      * @param String $s
      * @return Boolean
@@ -30,25 +31,40 @@ class Solution {
     function isValid($s) {
         $length=strlen($s);
         $last=$length-1;
-        //echo $last;
         $valid=0;
         if($s[0]==')' || $s[0]=='}' || $s[0]==']'){
-            return false;
+            $valid=1;
         }elseif($s[$last]=='(' || $s[$last]=='{' || $s[$last]=='['){
-            return false;
+            $valid=1;
         }
         for($i=0; $i<$length; $i++){
-            if($s[$i]=='('){
-                if($s[$i+1]!='{' || $s[$i+1]!='[' || $s[$i+1]==')'){
+            if($s[$i]=='(' && $valid!=1){
+                if($s[$i+1]=='{' || $s[$i+1]=='[' || $s[$i+1]=='(' || $s[$i+1]==')'){
                     $valid=0;
-                }else{
-                    return false;
+                }
+                else{
+                    $valid=1;
+                }
+            }elseif($s[$i]=='{' && $valid!=1){
+                if($s[$i+1]=='(' || $s[$i+1]=='[' || $s[$i+1]=='{' || $s[$i+1]=='}'){
+                    $valid=0;
+                }
+                else{
+                    $valid=1;
+                }
+            }elseif($s[$i]=='[' && $valid!=1){
+                if($s[$i+1]=='(' || $s[$i+1]=='{' || $s[$i+1]=='{' || $s[$i+1]==']'){
+                    $valid=0;
+                }
+                else{
+                    $valid=1;
                 }
             }
-            
         }
         if($valid==0){
             return true;
+        }else{
+            return false;
         }
     }
 }
