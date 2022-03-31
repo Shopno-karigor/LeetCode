@@ -1,3 +1,4 @@
+/**
 Problem
 ==================
 Given an integer x, return true if x is palindrome integer.
@@ -26,6 +27,7 @@ Follow up: Could you solve it without converting the integer to a string?
 
 Code
 ================
+*/
 class Solution {
     /**
      * @param Integer $x
